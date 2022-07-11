@@ -1,0 +1,33 @@
+{
+  "name": "fize/codec",
+  "description": "各式各样的编码解码类库",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "FizeChan",
+      "email": "chenfengzhan@qq.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Fize\\Codec\\": "src"
+    }
+  },
+  "require": {
+    "php": ">=7.0.0"
+  },
+  "suggest": {
+    "ext-iconv": "*",
+    "ext-json": "*",
+    "ext-simplexml": "*"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests"
+    }
+  },
+  "require-dev": {
+    "ext-curl": "*",
+    "phpunit/phpunit": "^9.5.0"
+  }
+}
