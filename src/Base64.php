@@ -9,6 +9,17 @@ use UnexpectedValueException;
  */
 class Base64
 {
+
+    /**
+     * Base64 编码
+     * @param string $data 待编码字符串
+     * @return string
+     */
+    public static function encode(string $data): string
+    {
+        return base64_encode($data);
+    }
+
     /**
      * Base64 解码
      * @param string $data   待解码字符串
@@ -26,12 +37,22 @@ class Base64
     }
 
     /**
-     * Base64 编码
-     * @param string $data 待编码字符串
+     * URL安全的 Base64 编码
+     * @param $data
      * @return string
      */
-    public static function encode(string $data): string
+    public static function urlEncode($data): string
     {
-        return base64_encode($data);
+        return rtrim(strtr(base64_encode($data), '+/', '-_'), '=');
+    }
+
+    /**
+     * URL安全的 Base64 解码
+     * @param $data
+     * @return string
+     */
+    public static function urlDecode($data): string
+    {
+        return base64_decode(str_pad(strtr($data, '-_', '+/'), strlen($data) % 4, '='));
     }
 }

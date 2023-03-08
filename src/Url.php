@@ -20,16 +20,6 @@ class Url
     }
 
     /**
-     * 对已编码的 URL 字符串进行解码
-     * @param string $str 要解码的 URL 字符串
-     * @return string
-     */
-    public static function rawDecode(string $str): string
-    {
-        return rawurldecode($str);
-    }
-
-    /**
      * 按照 RFC 3986 对 URL 进行编码
      * @param string $str 要编码的 URL
      * @return string
@@ -40,13 +30,13 @@ class Url
     }
 
     /**
-     * 解码已编码的 URL 字符串
+     * 对已编码的 URL 字符串进行解码
      * @param string $str 要解码的 URL 字符串
      * @return string
      */
-    public static function decode(string $str): string
+    public static function rawDecode(string $str): string
     {
-        return urldecode($str);
+        return rawurldecode($str);
     }
 
     /**
@@ -57,5 +47,15 @@ class Url
     public static function encode(string $str): string
     {
         return urlencode($str);
+    }
+
+    /**
+     * 解码已编码的 URL 字符串
+     * @param string $str 要解码的 URL 字符串
+     * @return string
+     */
+    public static function decode(string $str): string
+    {
+        return urldecode($str);
     }
 }

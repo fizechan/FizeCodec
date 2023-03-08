@@ -20,6 +20,23 @@ class TestUrl extends TestCase
         self::assertNotEmpty($scheme);
     }
 
+    public function testRawEncode()
+    {
+        $url = 'https://www.baidu.com?a=search&k=eclipse';
+        $encode1 = Url::rawEncode($url);
+        var_dump($encode1);
+        $encode2 = Url::encode($url);
+        var_dump($encode2);
+        self::assertEquals($encode1, $encode2);
+
+        $uri = '在处理空 格  时这两个方法有不同';
+        $encode3 = Url::rawEncode($uri);
+        var_dump($encode3);
+        $encode4 = Url::encode($uri);
+        var_dump($encode4);
+        self::assertNotEquals($encode3, $encode4);
+    }
+
     public function testRawDecode()
     {
         //空格解析成%20时，rawDecode、decode结果一致
@@ -37,23 +54,6 @@ class TestUrl extends TestCase
         $decode4 = Url::decode($url2);
         var_dump($decode4);
         self::assertEquals($decode1, $decode2);
-    }
-
-    public function testRawEncode()
-    {
-        $url = 'https://www.baidu.com?a=search&k=eclipse';
-        $encode1 = Url::rawEncode($url);
-        var_dump($encode1);
-        $encode2 = Url::encode($url);
-        var_dump($encode2);
-        self::assertEquals($encode1, $encode2);
-
-        $uri = '在处理空 格  时这两个方法有不同';
-        $encode3 = Url::rawEncode($uri);
-        var_dump($encode3);
-        $encode4 = Url::encode($uri);
-        var_dump($encode4);
-        self::assertNotEquals($encode3, $encode4);
     }
 
     public function testEncode()
