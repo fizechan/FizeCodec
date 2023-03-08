@@ -1,7 +1,7 @@
 <?php
 require_once "../../vendor/autoload.php";
 
-use Fize\Crypt\XML;
+use Fize\Codec\XML;
 
 $array = [
     'id' => 123456,

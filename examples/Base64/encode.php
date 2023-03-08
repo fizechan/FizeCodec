@@ -1,7 +1,7 @@
 <?php
 require_once "../../vendor/autoload.php";
 
-use Fize\Crypt\Base64;
+use Fize\Codec\Base64;
 
 $str = '123456';
 $enstr = Base64::encode($str);

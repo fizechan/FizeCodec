@@ -1,7 +1,7 @@
 <?php
 require_once "../../vendor/autoload.php";
 
-use Fize\Crypt\UTF8;
+use Fize\Codec\UTF8;
 
 $str0 = '123456你好！';
 $str1 = UTF8::encode($str0);

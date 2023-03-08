@@ -1,7 +1,7 @@
 <?php
 require_once "../../vendor/autoload.php";
 
-use Fize\Crypt\Url;
+use Fize\Codec\Url;
 
 $url = 'https://www.baidu.com/dir1/test.php?val1=1&val2=2&val3=3';
 $paramas = Url::parse($url);

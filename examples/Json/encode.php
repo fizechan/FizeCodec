@@ -1,7 +1,7 @@
 <?php
 require_once "../../vendor/autoload.php";
 
-use Fize\Crypt\Json;
+use Fize\Codec\Json;
 
 $array = [
     'errcode' => 0,

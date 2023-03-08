@@ -1,7 +1,7 @@
 <?php
 require_once "../../vendor/autoload.php";
 
-use Fize\Crypt\Url;
+use Fize\Codec\Url;
 
 $url = 'https://www.baidu.com?a=search&k=eclipse';
 $encode1 = Url::rawEncode($url);
