@@ -11,19 +11,22 @@ class TestBase64 extends TestCase
     public function testEncode()
     {
         $decode = '1234561';
-        $this->assertEquals('MTIzNDU2', Base64::encode($decode));
+        $this->assertEquals('MTIzNDU2MQ==', Base64::encode($decode));
     }
 
     public function testDecode()
     {
-        $encode = 'MTIzNDU2';
-        $this->assertEquals('123456', Base64::decode($encode));
+        $encode = 'MTIzNDU2MQ==';
+        $this->assertEquals('1234561', Base64::decode($encode));
     }
 
     public function testUrlEncode()
     {
         $decode = 'Hello World';
         $this->assertEquals('SGVsbG8gV29ybGQ', Base64::urlEncode($decode));
+        $data = '2023-02-01 11:12:23';
+        $estr = Base64::urlEncode($data);
+        var_dump($estr);
     }
 
     public function testUrlDecode()
